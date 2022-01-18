@@ -1,0 +1,273 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100&display=swap');
+
+/* *{
+    border: dotted #0037ff 1px;
+} */
+
+/* ------------
+    全体調整用css
+------------ */
+html { scroll-behavior: smooth;}
+
+body{
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    font-family: 'M PLUS 1p', sans-serif;
+    line-height: 1.5;
+    color: #000000;
+}
+
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+h1{
+    text-align: left;
+    margin: 70px 0 50px 0;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+/*----------- 
+    header 
+------------*/
+header{
+    width: 100%;
+    height: 15vh;
+    background-color: #ffffff;
+}
+
+.header-logo{
+    height: auto;
+    width: 10vh;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+/* ------------
+    hamburger
+--------------*/
+.hamburger{
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    width: 4em;
+    height: 4em;
+    cursor: pointer;
+    z-index: 300;
+}
+
+.open .hamburger{
+    position: fixed;
+}
+
+.hamburger_line{
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    right: 0;
+    background-color: #000;
+    transition: all 0.5s;
+}
+
+.hamburger_line_1{
+    top: 1px;
+}
+
+.hamburger_line_2{
+    top: 18px;
+}
+
+.hamburger_line_3{
+    top: 36px;
+}
+/* クリック時の挙動 */
+.open .hamburger_line_1{
+    transform: rotate(-45deg);
+    top: 11px;
+}
+
+.open .hamburger_line_2{
+    opacity: 0;
+}
+
+.open .hamburger_line_3{
+    transform: rotate(45deg);
+    top: 11px;
+}
+
+.hamburger_nav{
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: #fff;
+    transition: all 0.5s;
+    z-index: 200;
+    overflow-y: auto;
+}
+
+.open .hamburger_nav{
+    right: 0;
+}
+
+.hamburger_nav ul{
+    margin-right: 3%;
+    padding-left: 5% !important; 
+    list-style: none;
+    font-size: 50px;
+}
+
+.black_bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    opacity: 0;
+    background-color: #000;
+    visibility: hidden;
+    transition: all 0.5;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.open .black_bg{
+    opacity: 0.3;
+    visibility: visible;
+}
+/*-------------
+    top image
+--------------*/
+.top-img{
+    width: 100%;
+    height: 700px;
+    position: relative;
+    background-image: url(../image/top_image.png);
+    background-position: 40% center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.top-img::before {
+    content: '';
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+/* ----------
+    about 
+------------*/
+
+.about-txt{
+    margin-bottom: 70px;
+}
+
+.about-txt p{
+    font-size: 19px;
+    line-height: 30px;
+}
+
+.about-txt h2{
+    font-size: 35px;
+    line-height: 60px;
+}
+
+.about-img{
+    width: 100%;
+    height: auto;
+}
+/*-------------
+    item&blog
+-------------*/
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-item{
+    margin: 0 1em 1em;
+    background-color: #ffffff;
+}
+
+.flex-item h3{
+    font-size: 30px;
+}
+
+.flex-item p{
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.container-img{
+    width: 100%;
+    height: auto;
+}
+/*------------
+    footer
+------------ */
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 100%;
+    background-color: #000000;
+}
+
+.footer-logo{
+    height: 10vh; 
+    margin: 0 auto;
+}
+
+/* ------------------
+        Desktop
+------------------ */
+@media screen and (min-width: 768px) {
+    h1{
+        text-align: center;
+        padding-bottom: 70px;
+    }
+
+    .about-wrapper{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row-reverse;
+    }
+
+    .about-img{
+        width: 300px;
+        height: auto;
+    }
+
+
+    .flex-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-bottom: 60px;
+    }
+
+    .container-img{
+        width: auto;
+        height: 370px;
+    }
+}
